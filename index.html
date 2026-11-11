@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Nayera 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Great+Vibes&family=Nunito:wght@300;400;600&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TOKENS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root{
+  --gold:#d4a843;--gold2:#f0cc70;--gold3:#a07820;
+  --rose:#c0506e;--rose2:#e888a8;--rose3:#7a1838;
+  --ink:#1a0e08;--ink2:#3c2010;
+  --cream:#fef9f0;--cream2:#fdf3e0;
+  --env1:#c8903c;--env2:#b07028;--env3:#e0b868;
+  --bg1:#0a0414;--bg2:#140828;--bg3:#1e0c3c;
+  --glass:rgba(255,255,255,0.06);
+  --glow:rgba(212,168,67,0.4);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+
+body{
+  font-family:'Nunito',sans-serif;
+  background:radial-gradient(ellipse 120% 80% at 50% 30%,#1e0c3c,#0d0520 60%,#060210);
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;position:relative;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   AURORA BACKGROUND
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.aurora{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.aurora-band{
+  position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;
+  animation:auroraMove 12s ease-in-out infinite alternate;
+}
+.aurora-band:nth-child(1){
+  width:70vw;height:50vh;top:-10vh;left:-10vw;
+  background:radial-gradient(ellipse,#8040c0,transparent 70%);
+  animation-delay:0s;
+}
+.aurora-band:nth-child(2){
+  width:60vw;height:60vh;bottom:-10vh;right:-10vw;
+  background:radial-gradient(ellipse,#c04080,transparent 70%);
+  animation-delay:-4s;
+}
+.aurora-band:nth-child(3){
+  width:50vw;height:40vh;top:20vh;right:10vw;
+  background:radial-gradient(ellipse,#d4a843,transparent 70%);
+  opacity:0.1;animation-delay:-8s;
+}
+
+@keyframes auroraMove{
+  0%{transform:scale(1) translate(0,0) rotate(0deg)}
+  100%{transform:scale(1.2) translate(3%,5%) rotate(8deg)}
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PARTICLES CANVAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#cvs{position:fixed;inset:0;z-index:1;pointer-events:none}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SCENE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#scene{
+  position:relative;z-index:10;
+  display:flex;flex-direction:column;align-items:center;gap:24px;
+}
+
+.hero-label{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(1.6rem,4vw,2.4rem);
+  background:linear-gradient(135deg,var(--gold2),var(--rose2),var(--gold2));
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmer 4s linear infinite;
+  text-align:center;
+  filter:drop-shadow(0 0 20px rgba(212,168,67,0.4));
+}
+
+@keyframes shimmer{
+  0%{background-position:0% 50%}
+  100%{background-position:200% 50%}
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ENVELOPE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#env-btn{
+  cursor:pointer;border:none;background:none;padding:0;
+  outline:none;position:relative;
+  animation:levitate 5s ease-in-out infinite;
+  transition:filter .3s,transform .3s;
+  -webkit-tap-highlight-color:transparent;
+}
+#env-btn:hover{filter:drop-shadow(0 30px 50px rgba(212,168,67,0.55))}
+
+@keyframes levitate{
+  0%,100%{transform:translateY(0) rotate(-0.8deg)}
+  50%{transform:translateY(-22px) rotate(0.8deg)}
+}
+
+.env{
+  width:clamp(280px,42vw,380px);
+  position:relative;
+}
+
+/* body */
+.env-body{
+  width:100%;
+  padding-top:65%;
+  position:relative;
+  background:linear-gradient(160deg,var(--env3) 0%,var(--env1) 45%,var(--env2) 100%);
+  border-radius:4px 4px 10px 10px;
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(255,210,120,0.3),
+    0 20px 60px rgba(0,0,0,0.6),
+    0 0 80px rgba(212,168,67,0.2);
+  overflow:hidden;
+}
+
+/* diagonal stripe texture */
+.env-body::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -45deg,transparent 0,transparent 14px,
+    rgba(255,255,255,0.05) 14px,rgba(255,255,255,0.05) 15px
+  );
+}
+
+/* bottom V-fold */
+.env-vfold{
+  position:absolute;bottom:0;left:0;right:0;top:0;
+  pointer-events:none;
+  background:
+    linear-gradient(135deg, var(--env1) 50%, transparent 50%),
+    linear-gradient(225deg, var(--env1) 50%, transparent 50%);
+  background-size:50% 100%;
+  background-position:left bottom, right bottom;
+  background-repeat:no-repeat;
+  opacity:0.5;
+}
+
+/* flap */
+.env-flap{
+  position:absolute;top:0;left:0;right:0;
+  height:0;
+  border-left: calc(var(--env-w,190px)) solid transparent;
+  border-right:calc(var(--env-w,190px)) solid transparent;
+  border-top: calc(var(--env-w,190px) * 0.68) solid var(--env2);
+  transform-origin:top center;
+  transition:transform .7s cubic-bezier(.4,0,.2,1);
+  z-index:4;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,0.3));
+}
+
+/* gold edge on flap */
+.env-flap::after{
+  content:'';position:absolute;
+  top:calc(var(--env-w,190px) * -0.68 + 2px);
+  left:calc(var(--env-w,190px) * -1);
+  width:calc(var(--env-w,190px) * 2);
+  height:0;
+  border-left:calc(var(--env-w,190px)) solid transparent;
+  border-right:calc(var(--env-w,190px)) solid transparent;
+  border-top:calc(var(--env-w,190px) * 0.68) solid rgba(240,204,112,0.25);
+}
+
+/* left & right side flaps (decorative) */
+.env-side{
+  position:absolute;bottom:0;top:0;width:50%;
+  background:linear-gradient(to right, rgba(0,0,0,0.08), transparent);
+  pointer-events:none;
+}
+.env-side.right{left:50%;background:linear-gradient(to left, rgba(0,0,0,0.08), transparent)}
+
+/* postage stamp */
+.env-postage{
+  position:absolute;top:12px;right:14px;z-index:5;
+  width:46px;height:56px;
+  background:linear-gradient(135deg,#f8e8c0,#e8c888);
+  border:2px solid rgba(255,255,255,0.6);
+  border-radius:3px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  /* perforated edge illusion */
+  outline:3px dotted rgba(255,255,255,0.4);
+  outline-offset:-5px;
+}
+.env-postage .stamp-icon{font-size:1.3rem;line-height:1}
+.env-postage .stamp-txt{font-size:0.3rem;letter-spacing:.08em;color:#6a3010;font-weight:700;text-align:center}
+
+/* cancel marks */
+.env-cancel{
+  position:absolute;top:8px;right:66px;z-index:5;
+  width:46px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+}
+.env-cancel svg{width:100%;height:100%;opacity:.35}
+
+/* wax seal */
+.env-seal{
+  position:absolute;
+  left:50%;top:calc(35% - 0px);
+  transform:translate(-50%,-50%);
+  z-index:5;
+  width:clamp(54px,10vw,70px);
+  height:clamp(54px,10vw,70px);
+  transition:transform .3s;
+}
+#env-btn:hover .env-seal{transform:translate(-50%,-50%) scale(1.1) rotate(5deg)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   OPEN STATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#env-btn.opened{
+  animation:none;pointer-events:none;
+  opacity:0;transform:scale(0.5) translateY(50px);
+  transition:opacity .45s ease,transform .45s ease;
+}
+#env-btn.opened .env-flap{transform:rotateX(180deg)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HINT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hint{
+  font-family:'Great Vibes',cursive;
+  font-size:1.1rem;color:rgba(240,200,120,.65);
+  animation:blink 2.8s ease-in-out infinite;
+  text-align:center;
+}
+@keyframes blink{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   OVERLAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#overlay{
+  position:fixed;inset:0;z-index:50;
+  background:rgba(4,2,14,.82);
+  backdrop-filter:blur(16px) saturate(1.4);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:20px 16px 20px;
+  overflow-y:auto;
+  opacity:0;pointer-events:none;
+  transition:opacity .5s ease;
+}
+#overlay.show{opacity:1;pointer-events:all}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PAPER WRAPPER (spring in)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#paper-wrap{
+  position:relative;width:100%;max-width:700px;margin:auto;
+  transform:translateY(70px) scale(.9);opacity:0;
+  transition:transform .65s cubic-bezier(.34,1.56,.64,1),opacity .5s ease;
+}
+#overlay.show #paper-wrap{transform:translateY(0) scale(1);opacity:1}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TOP BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.top-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;
+  background:linear-gradient(90deg,var(--rose3),var(--rose),var(--rose3));
+  border-radius:16px 16px 0 0;
+  box-shadow:0 -2px 30px rgba(192,80,110,.35);
+}
+.top-bar-title{
+  font-family:'Great Vibes',cursive;
+  font-size:1.35rem;color:rgba(255,255,255,.95);
+  text-shadow:0 0 20px rgba(255,160,180,.5);
+}
+.top-bar-ctrl{display:flex;gap:10px;align-items:center}
+.ctrl-btn{
+  border:none;cursor:pointer;border-radius:30px;
+  font-size:.78rem;font-weight:700;letter-spacing:.05em;
+  padding:7px 16px;transition:all .25s;outline:none;
+  display:flex;align-items:center;gap:5px;
+}
+.btn-lang{
+  background:rgba(255,255,255,.12);color:#fff;
+  border:1.5px solid rgba(255,255,255,.3);
+}
+.btn-lang:hover{background:rgba(255,255,255,.25);transform:translateY(-1px)}
+.btn-save{
+  background:linear-gradient(135deg,var(--gold2),var(--gold3));
+  color:#fff;border:1.5px solid var(--gold3);
+  box-shadow:0 0 14px rgba(212,168,67,.4);
+}
+.btn-save:hover{background:linear-gradient(135deg,#ffe090,var(--gold));transform:translateY(-1px)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PAPER SHEET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#paper{
+  background:var(--cream);
+  position:relative;padding:56px 60px 68px;
+  border-radius:0 0 12px 12px;
+  box-shadow:
+    0 2px 0 #e0c898, 0 4px 0 #d0b888,
+    0 6px 0 #c0a878, 0 8px 0 #b09868,
+    6px 24px 80px rgba(0,0,0,.65);
+  overflow:hidden;
+}
+
+/* paper texture */
+#paper::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(transparent 0,transparent 31px,rgba(180,140,100,.18) 31px,rgba(180,140,100,.18) 32px);
+  background-position:0 68px;
+}
+/* left red margin */
+#paper::after{
+  content:'';position:absolute;top:0;left:76px;bottom:0;
+  width:1.5px;background:rgba(220,80,100,.22);pointer-events:none;
+}
+
+/* subtle paper noise */
+.paper-noise{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PAPER HEADER DECOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.paper-header{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:flex-end;
+  margin-bottom:36px;
+}
+.paper-date{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.85rem;font-style:italic;
+  color:var(--ink2);opacity:.6;
+  text-align:right;
+}
+.paper-line-decor{
+  height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin-bottom:32px;position:relative;z-index:2;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LETTER BODY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.letter-content{position:relative;z-index:2}
+
+.salutation{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.95rem;font-weight:600;font-style:italic;
+  color:var(--rose3);margin-bottom:28px;line-height:1.2;
+}
+
+.letter-body p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;line-height:2.05;
+  color:var(--ink);margin-bottom:22px;
+  text-align:justify;
+}
+.letter-body p em{font-style:italic;color:var(--rose3);font-weight:600}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ORNAMENT DIVIDER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.orn-divider{
+  display:flex;align-items:center;gap:14px;
+  margin:36px 0 32px;position:relative;z-index:2;
+}
+.orn-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+.orn-center{
+  display:flex;gap:6px;align-items:center;
+  color:var(--gold);font-size:.95rem;letter-spacing:6px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SIGNATURE + STAMP ROW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.sig-stamp-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  position:relative;z-index:2;
+  margin-top:28px;
+}
+
+/* stamp on left */
+.wax-stamp-wrap{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  flex-shrink:0;
+}
+.wax-stamp{
+  width:108px;height:108px;position:relative;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  cursor:default;
+}
+.wax-stamp:hover{transform:scale(1.08) rotate(-4deg)}
+.stamp-lbl{
+  font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(100,60,40,.4);font-family:'Nunito',sans-serif;
+  text-align:center;
+}
+
+/* signature on right */
+.sig-block{
+  text-align:right;flex:1;
+}
+.sig-closing{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink2);opacity:.55;margin-bottom:6px;
+}
+.sig-name{
+  font-family:'Great Vibes',cursive;
+  font-size:3rem;color:var(--ink);line-height:1.05;
+  text-shadow:1px 2px 0 rgba(0,0,0,.07);
+}
+
+/* RTL: stamp naturally goes right via browser RTL flex order;
+   just align sig text to left since it ends up on the left side */
+[dir="rtl"] .sig-block{text-align:left}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CORNER ROSES (decorative)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.cr{position:absolute;font-size:2rem;opacity:.14;user-select:none;pointer-events:none}
+.cr-tl{top:14px;left:14px;transform:rotate(-30deg)}
+.cr-tr{top:14px;right:14px;transform:rotate(30deg)}
+.cr-bl{bottom:14px;left:14px;transform:rotate(20deg)}
+.cr-br{bottom:14px;right:14px;transform:rotate(-20deg)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CLOSE BUTTON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#close-btn{
+  position:fixed;top:16px;right:18px;z-index:200;
+  width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);backdrop-filter:blur(8px);
+  color:#fff;font-size:1rem;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;
+}
+#close-btn.show{display:flex}
+#close-btn:hover{background:rgba(255,255,255,.22);transform:scale(1.1)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TOAST NOTIFICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#toast{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:linear-gradient(135deg,var(--rose3),var(--rose));
+  color:#fff;padding:12px 24px;border-radius:30px;
+  font-size:.85rem;font-weight:600;letter-spacing:.04em;
+  box-shadow:0 8px 30px rgba(0,0,0,.4);
+  opacity:0;pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease;
+  z-index:999;white-space:nowrap;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LOADING OVERLAY (for export)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#loading{
+  position:fixed;inset:0;z-index:999;
+  background:rgba(4,2,14,.85);backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;
+  flex-direction:column;gap:16px;
+  color:#fff;font-family:'Nunito',sans-serif;
+}
+#loading.show{display:flex}
+.loader-ring{
+  width:52px;height:52px;border-radius:50%;
+  border:3px solid rgba(255,255,255,.1);
+  border-top-color:var(--gold2);
+  animation:spin .9s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RTL OVERRIDES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+[dir="rtl"] .letter-body p{font-family:'Amiri',serif;font-size:1.12rem;text-align:right}
+[dir="rtl"] .salutation{font-family:'Amiri',serif;font-size:1.8rem;font-style:normal}
+[dir="rtl"] .paper-date{text-align:left}
+[dir="rtl"] #paper::after{left:auto;right:76px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media(max-width:600px){
+  #paper{padding:36px 28px 50px}
+  #paper::after{left:50px}
+  .sig-name{font-size:2.2rem}
+  .top-bar-title{font-size:1.1rem}
+  .ctrl-btn{padding:6px 12px;font-size:.72rem}
+  .sig-stamp-row{flex-direction:column;align-items:center}
+  .sig-block{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- aurora -->
+<div class="aurora">
+  <div class="aurora-band"></div>
+  <div class="aurora-band"></div>
+  <div class="aurora-band"></div>
+</div>
+
+<!-- particle canvas -->
+<canvas id="cvs"></canvas>
+
+<!-- close btn -->
+<button id="close-btn" aria-label="Close">✕</button>
+
+<!-- loading -->
+<div id="loading">
+  <div class="loader-ring"></div>
+  <p id="loading-text">Creating your image…</p>
+</div>
+
+<!-- toast -->
+<div id="toast"></div>
+
+<!-- ══════════════════════════════
+     SCENE
+══════════════════════════════ -->
+<div id="scene">
+  <p class="hero-label" id="hero-label">A special message awaits you, Nayera ✨</p>
+
+  <!-- ENVELOPE -->
+  <button id="env-btn" aria-label="Open love letter">
+    <div class="env">
+      <div class="env-body">
+
+        <!-- side fold illusions -->
+        <div class="env-side"></div>
+        <div class="env-side right"></div>
+
+        <!-- postage stamp -->
+        <div class="env-postage">
+          <span class="stamp-icon">💕</span>
+          <span class="stamp-txt">LOVE<br>MAIL</span>
+        </div>
+
+        <!-- cancel lines -->
+        <div class="env-cancel">
+          <svg viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <circle cx="25" cy="30" r="22" stroke="#6a3010" stroke-width="2"/>
+            <line x1="3" y1="20" x2="47" y2="20" stroke="#6a3010" stroke-width="1.5"/>
+            <line x1="3" y1="27" x2="47" y2="27" stroke="#6a3010" stroke-width="1.5"/>
+            <line x1="3" y1="34" x2="47" y2="34" stroke="#6a3010" stroke-width="1.5"/>
+            <text x="25" y="52" text-anchor="middle" font-size="7" font-family="monospace" fill="#6a3010" opacity="0.6">11·11·2026</text>
+          </svg>
+        </div>
+
+        <!-- flap -->
+        <div class="env-flap" id="env-flap"></div>
+
+        <!-- wax seal SVG -->
+        <div class="env-seal">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="wG" cx="38%" cy="35%" r="62%">
+                <stop offset="0%" stop-color="#e53060"/>
+                <stop offset="55%" stop-color="#9b2335"/>
+                <stop offset="100%" stop-color="#5c0d1c"/>
+              </radialGradient>
+              <filter id="emboss" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="b"/>
+                <feOffset dx="1.5" dy="2" in="b" result="o"/>
+                <feComposite in="SourceGraphic" in2="o" operator="over"/>
+              </filter>
+            </defs>
+            <!-- wax blob – slightly irregular -->
+            <ellipse cx="50" cy="51" rx="47" ry="45" fill="url(#wG)"/>
+            <!-- glow ring -->
+            <ellipse cx="50" cy="51" rx="47" ry="45" fill="none" stroke="rgba(255,200,160,.25)" stroke-width="1.5"/>
+            <!-- inner dotted ring -->
+            <ellipse cx="50" cy="51" rx="39" ry="37" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="3 3"/>
+            <!-- cardinal dots -->
+            <circle cx="50" cy="8"  r="2.5" fill="rgba(255,255,255,.35)"/>
+            <circle cx="50" cy="94" r="2.5" fill="rgba(255,255,255,.35)"/>
+            <circle cx="8"  cy="51" r="2.5" fill="rgba(255,255,255,.35)"/>
+            <circle cx="92" cy="51" r="2.5" fill="rgba(255,255,255,.35)"/>
+            <!-- letter A -->
+            <text x="50" y="66" text-anchor="middle"
+              font-family="Cormorant Garamond, Georgia, serif"
+              font-size="44" font-weight="700" font-style="italic"
+              fill="rgba(255,255,255,.93)"
+              filter="url(#emboss)">𝒜</text>
+          </svg>
+        </div>
+
+        <!-- V fold overlay -->
+        <div class="env-vfold"></div>
+      </div>
+    </div>
+  </button>
+
+  <p class="hint" id="hint">— tap the envelope to open —</p>
+</div>
+
+<!-- ══════════════════════════════
+     OVERLAY / LETTER
+══════════════════════════════ -->
+<div id="overlay" role="dialog" aria-modal="true" aria-label="Love letter for Nayera">
+  <div id="paper-wrap">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <span class="top-bar-title" id="ribbon-title">💌 A Letter for Nayera</span>
+      <div class="top-bar-ctrl">
+        <button class="ctrl-btn btn-lang" id="lang-btn">🌐 العربية</button>
+        <button class="ctrl-btn btn-save" id="save-btn">📸 Save as Image</button>
+      </div>
+    </div>
+
+    <!-- PAPER -->
+    <div id="paper">
+      <div class="paper-noise"></div>
+
+      <!-- corner roses -->
+      <span class="cr cr-tl">🌹</span>
+      <span class="cr cr-tr">🌹</span>
+      <span class="cr cr-bl">🌹</span>
+      <span class="cr cr-br">🌹</span>
+
+      <!-- header row: date only -->
+      <div class="paper-header">
+        <div class="paper-date" id="paper-date">November 11, 2026</div>
+      </div>
+
+      <div class="paper-line-decor"></div>
+
+      <div class="letter-content">
+        <p class="salutation" id="salutation">My Dearest Nayera,</p>
+        <div class="letter-body" id="letter-body"></div>
+
+        <!-- ornament divider -->
+        <div class="orn-divider">
+          <div class="orn-line"></div>
+          <div class="orn-center">✦ ❧ ✦</div>
+          <div class="orn-line"></div>
+        </div>
+
+        <!-- SIGNATURE + WAX STAMP side by side -->
+        <div class="sig-stamp-row">
+
+          <!-- REALISTIC WAX STAMP (left) -->
+          <div class="wax-stamp-wrap">
+            <div class="wax-stamp">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;overflow:visible">
+                <defs>
+                  <!-- Main wax body gradient: deep crimson with realistic light hit -->
+                  <radialGradient id="waxBody" cx="36%" cy="30%" r="70%">
+                    <stop offset="0%"   stop-color="#f04060"/>   <!-- bright highlight -->
+                    <stop offset="22%"  stop-color="#c0283c"/>   <!-- mid red -->
+                    <stop offset="58%"  stop-color="#8b1a28"/>   <!-- deep crimson -->
+                    <stop offset="85%"  stop-color="#5c0d18"/>   <!-- very dark edge -->
+                    <stop offset="100%" stop-color="#3a0810"/>   <!-- almost black edge -->
+                  </radialGradient>
+
+                  <!-- Secondary sheen: subtle glossy streak across top-left -->
+                  <radialGradient id="waxSheen" cx="30%" cy="22%" r="38%">
+                    <stop offset="0%"   stop-color="rgba(255,200,200,0.28)"/>
+                    <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                  </radialGradient>
+
+                  <!-- Rim gradient for the outer edge bevel -->
+                  <radialGradient id="waxRim" cx="50%" cy="50%" r="50%">
+                    <stop offset="72%" stop-color="rgba(0,0,0,0)"/>
+                    <stop offset="88%" stop-color="rgba(0,0,0,0.25)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+                  </radialGradient>
+
+                  <!-- Drop shadow filter -->
+                  <filter id="waxShadow" x="-20%" y="-20%" width="145%" height="155%">
+                    <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#3a0810" flood-opacity="0.65"/>
+                  </filter>
+
+                  <!-- Emboss for letter A: gives raised pressed-in feel -->
+                  <filter id="letterEmboss" x="-15%" y="-15%" width="130%" height="130%">
+                    <!-- bright top-left bevel -->
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="1.2" result="blur1"/>
+                    <feOffset dx="-1.5" dy="-1.5" in="blur1" result="shadow1"/>
+                    <feFlood flood-color="rgba(255,160,160,0.55)" result="light1"/>
+                    <feComposite in="light1" in2="shadow1" operator="in" result="lightLayer"/>
+                    <!-- dark bottom-right bevel -->
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="1.2" result="blur2"/>
+                    <feOffset dx="1.8" dy="2.2" in="blur2" result="shadow2"/>
+                    <feFlood flood-color="rgba(30,0,8,0.7)" result="dark2"/>
+                    <feComposite in="dark2" in2="shadow2" operator="in" result="darkLayer"/>
+                    <!-- merge: dark + source + light -->
+                    <feMerge>
+                      <feMergeNode in="darkLayer"/>
+                      <feMergeNode in="SourceGraphic"/>
+                      <feMergeNode in="lightLayer"/>
+                    </feMerge>
+                  </filter>
+
+                  <!-- Clip to wax blob shape -->
+                  <clipPath id="waxClip">
+                    <path d="M60,6
+                      C71,5 83,10 90,19
+                      C97,25 103,34 107,44
+                      C111,55 111,67 107,77
+                      C103,88 95,97 84,103
+                      C73,109 59,112 47,109
+                      C35,106 24,98 17,88
+                      C10,78 7,65 8,53
+                      C9,41 14,29 23,21
+                      C32,13 49,7 60,6Z"/>
+                  </clipPath>
+                </defs>
+
+                <!-- ── DROP SHADOW GROUP ── -->
+                <g filter="url(#waxShadow)">
+
+                  <!-- Wax blob: organic not-quite-circle shape -->
+                  <path d="M60,6
+                    C71,5 83,10 90,19
+                    C97,25 103,34 107,44
+                    C111,55 111,67 107,77
+                    C103,88 95,97 84,103
+                    C73,109 59,112 47,109
+                    C35,106 24,98 17,88
+                    C10,78 7,65 8,53
+                    C9,41 14,29 23,21
+                    C32,13 49,7 60,6Z"
+                    fill="url(#waxBody)"/>
+
+                  <!-- Rim darkening overlay -->
+                  <path d="M60,6
+                    C71,5 83,10 90,19
+                    C97,25 103,34 107,44
+                    C111,55 111,67 107,77
+                    C103,88 95,97 84,103
+                    C73,109 59,112 47,109
+                    C35,106 24,98 17,88
+                    C10,78 7,65 8,53
+                    C9,41 14,29 23,21
+                    C32,13 49,7 60,6Z"
+                    fill="url(#waxRim)"/>
+
+                  <!-- Specular gloss sheen (clipped) -->
+                  <g clip-path="url(#waxClip)">
+                    <ellipse cx="43" cy="35" rx="22" ry="14"
+                      fill="url(#waxSheen)"
+                      transform="rotate(-30 43 35)"/>
+                    <!-- tiny micro-sheen sparkle -->
+                    <ellipse cx="36" cy="28" rx="6" ry="3.5"
+                      fill="rgba(255,220,220,0.18)"
+                      transform="rotate(-25 36 28)"/>
+                  </g>
+
+                  <!-- ── ENGRAVED DESIGN ── -->
+                  <!-- Outer ring: pressed groove -->
+                  <circle cx="60" cy="58" r="44"
+                    fill="none"
+                    stroke="rgba(30,0,8,0.55)"
+                    stroke-width="2.5"/>
+                  <circle cx="60" cy="58" r="44"
+                    fill="none"
+                    stroke="rgba(255,140,140,0.18)"
+                    stroke-width="1"
+                    stroke-dasharray="0"/>
+
+                  <!-- Inner ring (second groove) -->
+                  <circle cx="60" cy="58" r="37"
+                    fill="none"
+                    stroke="rgba(30,0,8,0.45)"
+                    stroke-width="1.5"/>
+                  <circle cx="60" cy="58" r="37"
+                    fill="none"
+                    stroke="rgba(255,120,120,0.14)"
+                    stroke-width="0.8"/>
+
+                  <!-- Tiny engraved dots at compass points -->
+                  <circle cx="60" cy="17" r="2.2" fill="rgba(30,0,8,0.5)"/>
+                  <circle cx="60" cy="17" r="1"   fill="rgba(255,120,120,0.3)"/>
+                  <circle cx="60" cy="99" r="2.2" fill="rgba(30,0,8,0.5)"/>
+                  <circle cx="60" cy="99" r="1"   fill="rgba(255,120,120,0.3)"/>
+                  <circle cx="19" cy="58" r="2.2" fill="rgba(30,0,8,0.5)"/>
+                  <circle cx="19" cy="58" r="1"   fill="rgba(255,120,120,0.3)"/>
+                  <circle cx="101" cy="58" r="2.2" fill="rgba(30,0,8,0.5)"/>
+                  <circle cx="101" cy="58" r="1"   fill="rgba(255,120,120,0.3)"/>
+
+                  <!-- ── LETTER A — pressed into wax ── -->
+                  <!-- Dark shadow of letter (pressed-down effect) -->
+                  <text x="61.5" y="77"
+                    text-anchor="middle"
+                    font-family="Cormorant Garamond, Georgia, serif"
+                    font-size="52" font-weight="700" font-style="italic"
+                    fill="rgba(25,0,6,0.75)">𝒜</text>
+
+                  <!-- Main letter with emboss filter -->
+                  <text x="60" y="75"
+                    text-anchor="middle"
+                    font-family="Cormorant Garamond, Georgia, serif"
+                    font-size="52" font-weight="700" font-style="italic"
+                    fill="rgba(255,210,210,0.88)"
+                    filter="url(#letterEmboss)">𝒜</text>
+
+                  <!-- Subtle crack lines for realism -->
+                  <line x1="78" y1="22" x2="82" y2="30"
+                    stroke="rgba(20,0,5,0.35)" stroke-width="0.8" stroke-linecap="round"/>
+                  <line x1="35" y1="90" x2="40" y2="96"
+                    stroke="rgba(20,0,5,0.28)" stroke-width="0.7" stroke-linecap="round"/>
+                  <line x1="93" y1="70" x2="99" y2="73"
+                    stroke="rgba(20,0,5,0.25)" stroke-width="0.6" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+            <span class="stamp-lbl" id="stamp-lbl">sealed with love</span>
+          </div>
+
+          <!-- SIGNATURE (right) -->
+          <div class="sig-block">
+            <p class="sig-closing" id="sig-closing">With all my love,</p>
+            <p class="sig-name">Ahmed Talaat</p>
+          </div>
+
+        </div><!-- /sig-stamp-row -->
+      </div><!-- /letter-content -->
+    </div><!-- /paper -->
+  </div><!-- /paper-wrap -->
+</div><!-- /overlay -->
+
+<script>
+/* ═══════════════════════════════════════════════════
+   RESIZE ENVELOPE FLAP
+═══════════════════════════════════════════════════ */
+function resizeFlap(){
+  const body = document.querySelector('.env-body');
+  const flap = document.getElementById('env-flap');
+  if(!body||!flap) return;
+  const w = body.offsetWidth;
+  const half = w/2;
+  const h = half * 0.68;
+  flap.style.borderLeft  = `${half}px solid transparent`;
+  flap.style.borderRight = `${half}px solid transparent`;
+  flap.style.borderTop   = `${h}px solid #b07028`;
+  // also update pseudo
+  flap.style.setProperty('--hw',`${half}px`);
+  flap.style.setProperty('--hh',`${h}px`);
+}
+resizeFlap();
+window.addEventListener('resize', resizeFlap);
+
+/* ═══════════════════════════════════════════════════
+   PARTICLES
+═══════════════════════════════════════════════════ */
+(function(){
+  const cvs = document.getElementById('cvs');
+  const ctx = cvs.getContext('2d');
+  let W,H,pts=[];
+  const SYMBOLS = ['✦','✧','❋','❁','✿','⁕','❅','·'];
+
+  function resize(){
+    W = cvs.width  = window.innerWidth;
+    H = cvs.height = window.innerHeight;
+  }
+  function spawn(){
+    return {
+      x: Math.random()*W,
+      y: Math.random()*H,
+      size: Math.random()*10+4,
+      alpha: Math.random()*0.5+0.1,
+      da: (Math.random()*0.004+0.001) * (Math.random()>.5?1:-1),
+      vy: -(Math.random()*0.3+0.08),
+      vx: (Math.random()-.5)*0.15,
+      sym: SYMBOLS[Math.floor(Math.random()*SYMBOLS.length)],
+      hue: Math.random()>0.5 ? '#d4a843' : '#e888a8',
+    };
+  }
+  function init(){
+    resize();
+    pts = Array.from({length:70},spawn);
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{
+      p.x += p.vx; p.y += p.vy;
+      p.alpha += p.da;
+      if(p.alpha>0.65||p.alpha<0.05) p.da*=-1;
+      if(p.y<-20) Object.assign(p,spawn(),{y:H+10});
+      ctx.globalAlpha = Math.max(0,Math.min(1,p.alpha));
+      ctx.font = `${p.size}px serif`;
+      ctx.fillStyle = p.hue;
+      ctx.fillText(p.sym, p.x, p.y);
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+  init(); draw();
+  window.addEventListener('resize',resize);
+})();
+
+/* ═══════════════════════════════════════════════════
+   CONTENT
+═══════════════════════════════════════════════════ */
+const content = {
+  en:{
+    dir:'ltr',lang:'en',
+    heroLabel:'A special message awaits you, Nayera ✨',
+    hint:'— tap the envelope to open —',
+    ribbonTitle:'💌 A Letter for Nayera',
+    langBtn:'🌐 العربية',
+    date:'November 11, 2026',
+    salutation:'My Dearest Nayera,',
+    paragraphs:[
+      `There are moments in life that arrive so quietly you hardly notice them — yet they rearrange everything. You were one of those moments. You walked into my world and, without fanfare, filled every corner with a warmth I never knew I was missing.`,
+      `Every morning I wake up grateful — not for grand gestures, but for the small and extraordinary details only you bring: the way your laughter catches me off guard, the way your eyes hold a whole universe of kindness, the way you make even the most ordinary Tuesday feel worth celebrating.`,
+      `You are my <em>favourite thought</em> at the start of each day, and the last smile that crosses my heart before I sleep. In you I found not just someone to love, but someone who makes me want to be a better version of myself — more patient, more present, endlessly grateful.`,
+      `So here, in this small letter that holds far more feeling than words can capture, I want you to know: I cherish you, I admire you, and I love you in a way that grows deeper with every single day that passes.`,
+      `Thank you for being exactly who you are. The world is immeasurably more beautiful because you are in it — and so is mine, Nayera.`,
+    ],
+    sigClosing:'With all my love,',
+    stampLbl:'sealed with love',
+  },
+  ar:{
+    dir:'rtl',lang:'ar',
+    heroLabel:'✨ رسالة مميزة تنتظرك يا نيرة',
+    hint:'— اضغطي على الظرف لتفتحيه —',
+    ribbonTitle:'💌 رسالة إلى نيرة',
+    langBtn:'🌐 English',
+    date:'١١ نوفمبر ٢٠٢٦',
+    salutation:'نيرتي الغالية،',
+    paragraphs:[
+      `ثمة لحظاتٌ في الحياة تأتي بهدوءٍ شديد، لا تُلاحَظ لأول وهلة، ومع ذلك تُغيّر كلَّ شيء. كنتِ أنتِ إحدى تلك اللحظات. دخلتِ إلى عالمي وملأتِ كلَّ زاوية فيه بدفءٍ لم أكن أعلم أنني أفتقده.`,
+      `كلَّ صباح أستيقظ شاكراً — ليس على الأشياء الكبيرة، بل على التفاصيل الصغيرة التي لا تأتي إلا منكِ: ضحكتكِ التي تباغتني، وعيناكِ اللتان تحملان كوناً كاملاً من اللطف والدفء، والطريقة التي تجعلين بها أبسط لحظات اليوم تستحق الاحتفاء.`,
+      `أنتِ <em>فكرتي المفضّلة</em> في بداية كلِّ يوم، وآخر ابتسامة تعبر قلبي قبل أن أنام. فيكِ وجدتُ ليس حبيبةً أُحبُّها فحسب، بل شخصاً يجعلني أسعى لأكون نسخةً أفضل من نفسي.`,
+      `لذا، في هذه الرسالة الصغيرة التي تحمل من المشاعر أكثر مما تتسع له الكلمات، أريدكِ أن تعلمي: إنني أُقدِّركِ وأُعجَب بكِ وأُحبُّكِ بطريقةٍ تزداد عمقاً مع كلِّ يوم يمر.`,
+      `شكراً لكِ لأنكِ تكونين بالضبط من أنتِ. الدنيا أجمل بوجودكِ — وكذلك دنياي، يا نيرة.`,
+    ],
+    sigClosing:'بكلِّ حبّي،',
+    stampLbl:'مختوم بالحب',
+  },
+};
+
+let lang = 'en';
+
+function apply(l){
+  lang = l;
+  const c = content[l];
+  document.documentElement.lang = c.lang;
+  document.body.setAttribute('dir', c.dir);
+  document.getElementById('hero-label').textContent    = c.heroLabel;
+  document.getElementById('hint').textContent          = c.hint;
+  document.getElementById('ribbon-title').textContent  = c.ribbonTitle;
+  document.getElementById('lang-btn').textContent      = c.langBtn;
+  document.getElementById('paper-date').textContent    = c.date;
+  document.getElementById('salutation').textContent    = c.salutation;
+  document.getElementById('sig-closing').textContent   = c.sigClosing;
+  document.getElementById('stamp-lbl').textContent     = c.stampLbl;
+  document.getElementById('letter-body').innerHTML     = c.paragraphs.map(p=>`<p>${p}</p>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════
+   ENVELOPE OPEN / CLOSE
+═══════════════════════════════════════════════════ */
+const envBtn  = document.getElementById('env-btn');
+const overlay = document.getElementById('overlay');
+const closeBtn= document.getElementById('close-btn');
+
+function openLetter(){
+  envBtn.classList.add('opened');
+  setTimeout(()=>{
+    overlay.classList.add('show');
+    closeBtn.classList.add('show');
+  }, 460);
+}
+function closeLetter(){
+  overlay.classList.remove('show');
+  closeBtn.classList.remove('show');
+  setTimeout(()=>{
+    envBtn.classList.remove('opened');
+    envBtn.style.cssText='';
+  },480);
+}
+
+envBtn.addEventListener('click', openLetter);
+envBtn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});
+closeBtn.addEventListener('click', closeLetter);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeLetter()});
+
+/* ═══════════════════════════════════════════════════
+   LANGUAGE
+═══════════════════════════════════════════════════ */
+document.getElementById('lang-btn').addEventListener('click',()=>apply(lang==='en'?'ar':'en'));
+
+/* ═══════════════════════════════════════════════════
+   SAVE AS IMAGE (html2canvas)
+═══════════════════════════════════════════════════ */
+function showToast(msg, duration=2800){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), duration);
+}
+
+document.getElementById('save-btn').addEventListener('click', async ()=>{
+  const paper = document.getElementById('paper');
+  const loading = document.getElementById('loading');
+  document.getElementById('loading-text').textContent = 'Creating your image…';
+  loading.classList.add('show');
+
+  // small delay so loading screen renders
+  await new Promise(r=>setTimeout(r,80));
+
+  try{
+    const canvas = await html2canvas(paper,{
+      scale: 2.5,
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: '#fef9f0',
+      logging: false,
+      onclone:(doc)=>{
+        // ensure fonts render in clone
+        const paperClone = doc.getElementById('paper');
+        if(paperClone) paperClone.style.boxShadow = 'none';
+      }
+    });
+
+    // add elegant border/padding around the captured image
+    const finalCanvas = document.createElement('canvas');
+    const pad = 48;
+    finalCanvas.width  = canvas.width  + pad*2;
+    finalCanvas.height = canvas.height + pad*2;
+    const ctx = finalCanvas.getContext('2d');
+
+    // background
+    const bg = ctx.createLinearGradient(0,0,finalCanvas.width,finalCanvas.height);
+    bg.addColorStop(0,'#1a0a30');
+    bg.addColorStop(0.5,'#2a1040');
+    bg.addColorStop(1,'#1a0a30');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0,0,finalCanvas.width,finalCanvas.height);
+
+    // subtle corner ornaments on export bg
+    ctx.font = `${pad*1.2}px serif`;
+    ctx.fillStyle = 'rgba(212,168,67,0.18)';
+    ctx.fillText('🌹', 10, pad*1.6);
+    ctx.fillText('🌹', finalCanvas.width-pad*1.8, pad*1.6);
+    ctx.fillText('🌹', 10, finalCanvas.height-10);
+    ctx.fillText('🌹', finalCanvas.width-pad*1.8, finalCanvas.height-10);
+
+    // gold border
+    const brd = 3;
+    ctx.strokeStyle = 'rgba(212,168,67,0.6)';
+    ctx.lineWidth = brd;
+    ctx.strokeRect(brd/2, brd/2, finalCanvas.width-brd, finalCanvas.height-brd);
+
+    // inner thin border
+    ctx.strokeStyle = 'rgba(212,168,67,0.25)';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(12,12,finalCanvas.width-24,finalCanvas.height-24);
+
+    // draw letter paper
+    ctx.drawImage(canvas, pad, pad);
+
+    // download
+    const link = document.createElement('a');
+    link.download = 'letter-for-nayera.png';
+    link.href = finalCanvas.toDataURL('image/png',1.0);
+    link.click();
+
+    loading.classList.remove('show');
+    showToast('💌 Image saved! Print it, frame it, cherish it.');
+  } catch(err){
+    loading.classList.remove('show');
+    showToast('⚠️ Could not capture — try again.');
+    console.error(err);
+  }
+});
+
+/* ═══════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════ */
+apply('en');
+</script>
+</body>
+</html>
